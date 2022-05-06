@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
 from highlightHelper.configDict import IPA_DICT,COLORS
 from highlightHelper.highlighter import highlight_text
-import json
 
 
 
@@ -31,3 +30,6 @@ def highlighter():
         final_text = " ".join(text_input_split)
 
         return render_template('highlighted.html', text = final_text, original_text = text_input )#request.args['user_input'])
+
+if __name__=='__main__':
+    app.run(host="0.0.0.0",port=5000)
